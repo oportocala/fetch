@@ -303,6 +303,10 @@
         reject(new TypeError('Network request failed'))
       }
 
+      xhr.ontimeout = function() {
+        reject(new TypeError('Network request timeout'))
+      }
+
       xhr.open(self.method, self.url, true)
 
       if ('responseType' in xhr && support.blob) {
