@@ -224,6 +224,7 @@
     this.method = normalizeMethod(options.method || 'GET')
     this.mode = options.mode || null
     this.referrer = null
+    this.timeout = options.timeout || null;
 
     if ((this.method === 'GET' || this.method === 'HEAD') && options.body) {
       throw new TypeError('Body not allowed for GET or HEAD requests')
@@ -263,6 +264,10 @@
       var xhr = new XMLHttpRequest()
       if (self.credentials === 'cors') {
         xhr.withCredentials = true;
+      }
+      
+      if (self.timeout) {
+        xhr.timeout = self.timeout;
       }
 
       function responseURL() {
