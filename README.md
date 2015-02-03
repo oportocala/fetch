@@ -1,3 +1,6 @@
+# This fork
+The project is cloned from [github/fetch](https://github.com/github/fetch) and it's only puprose is to add `timeout` as an recognised option for `fetch(url, options)`.
+
 # window.fetch polyfill
 
 The global `fetch` function is an easier way to make web requests and handle
